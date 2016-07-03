@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from booking.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^student/$', booking_view),
+    url(r'^student/(?P<id>\d+)/$', booking_detail_view),
 ]
